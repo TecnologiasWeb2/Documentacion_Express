@@ -327,3 +327,120 @@ Una vez que hayas completado todo, sigue estos pasos para ejecutar el proyecto:
 npm start
 ```
 
+### Hacer las pruebas en postman 
+
+Endpoints del CRUD de Productos
+Obtener todos los productos
+
+Método: GET
+```bash
+URL: http://localhost:4000/api/products
+```
+Descripción: Obtiene la lista de todos los productos.
+Respuesta esperada (ejemplo):
+json
+```bash
+[
+  {
+    "id": 1,
+    "name": "Producto A",
+    "price": 100.0,
+    "description": "Descripción del Producto A",
+  },
+  {
+    "id": 2,
+    "name": "Producto B",
+    "price": 200.0,
+    "description": "Descripción del Producto B",
+  }
+]
+```
+Obtener un producto por ID
+
+Método: GET
+```bash
+URL: http://localhost:4000/api/products/:id
+```
+Descripción: Obtiene un producto específico por su ID.
+Parámetros: :id (ID del producto)
+Respuesta esperada (ejemplo):
+json
+```bash
+{
+  "id": 1,
+  "name": "Producto A",
+  "price": 100.0,
+  "description": "Descripción del Producto A",
+
+}
+```
+Crear un nuevo producto
+
+Método: POST
+```bash
+URL: http://localhost:4000/api/products
+```
+Descripción: Crea un nuevo producto.
+Cuerpo de la solicitud (JSON):
+json
+```bash
+{
+  "name": "Producto C",
+  "price": 300.0,
+  "description": "Descripción del Producto C"
+}
+```
+Respuesta esperada (ejemplo):
+json
+```bash
+{
+  "id": 3,
+  "name": "Producto C",
+  "price": 300.0,
+  "description": "Descripción del Producto C",
+}
+```
+Actualizar un producto existente
+
+Método: PUT
+```bash
+URL: http://localhost:4000/api/products/:id
+```
+Descripción: Actualiza un producto existente.
+Parámetros: :id (ID del producto)
+Cuerpo de la solicitud (JSON):
+json
+```bash
+{
+  "name": "Producto Actualizado",
+  "price": 150.0,
+  "description": "Descripción del Producto Actualizado"
+}
+```
+Respuesta esperada (ejemplo):
+json
+```bash
+{
+  "id": 1,
+  "name": "Producto Actualizado",
+  "price": 150.0,
+  "description": "Descripción del Producto Actualizado",
+
+}
+```
+Eliminar un producto
+
+Método: DELETE
+```bash
+URL: http://localhost:4000/api/products/:id
+```
+Descripción: Elimina un producto existente por su ID.
+Parámetros: :id (ID del producto)
+Respuesta esperada (ejemplo):
+json
+```bash
+{
+  "message": "Producto eliminado"
+}
+```
+
